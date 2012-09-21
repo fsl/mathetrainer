@@ -1,0 +1,33 @@
+<script>
+
+  function zufallszahl(von, bis) {
+    return Math.round(Math.random()*(bis-von)+von);
+  }
+
+  alert('Willkommen beim Mathetrainer');
+
+  do {
+    var anzahl = prompt('Wie viele Aufgaben?');
+    var richtig = 0;
+
+    for (var i=0;i<anzahl;i++) {
+      var summand1 = zufallszahl(1,10);
+      var summand2 = zufallszahl(1,10);
+
+      var eingabe = prompt('Was ist '+summand1+' + '+summand2+'?');
+
+      var summe = summand1 + summand2;
+
+      if (eingabe == summe) {
+        alert('Richtig');
+        richtig++;
+      } else {
+        alert('Falsch');
+      }
+    } 
+
+    var ausabe = 'Du hast ' + richtig + ' Aufgabe' + (richtig==1?'':'n') + 
+                 'richtig. Nochmal?';
+  } while(confirm(ausabe));
+</script>
+
